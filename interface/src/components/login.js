@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './login.css';
 import {
 MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse,
-MDBContainer, MDBRow, MDBCol, MDBIcon,MDBInput, MDBBtn, MDBCard, MDBCardBody, MDBFooter} from "mdbreact";
+MDBContainer, MDBRow, MDBCol, MDBIcon,MDBInput, MDBBtn, MDBCard, MDBCardBody} from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
 import axios from "axios";
 
@@ -65,7 +65,7 @@ class Login extends Component {
 
     render() {
       return (
-        <Router>
+        <Router >
           <MDBNavbar  color="info-color" dark expand="md">
             <MDBNavbarBrand>
               <strong className="white-text">Esi Gestion</strong>
