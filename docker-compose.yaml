@@ -1,0 +1,22 @@
+version: "3"
+services:
+    frontend:
+        container_name: react_cont
+        build:
+            context: ./front
+            dockerfile: Dockerfile
+        image: reactimg
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./react:/usr/src/app
+    backend:
+        container_name: node_cont
+        build:
+            context: ./back/api
+            dockerfile: Dockerfile
+        image: nodeimg
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./backend:/usr/src/app
