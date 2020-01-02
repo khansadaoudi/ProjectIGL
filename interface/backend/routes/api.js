@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const BlogPost = require('../models/blogPost');
+const BlogPost = require('../model/api');
 
 //Routes
 router.get('/',(req,res) =>{
@@ -17,15 +17,6 @@ router.get('/',(req,res) =>{
         });
     
 });
-
-router.get('/n',(req,res) =>{
-    const data = {
-        username : 'fatima',
-        age: 5
-    };
-    res.json(data);
-});
-
 router.post('/save', (req, res) => {
     const data = req.body;
 

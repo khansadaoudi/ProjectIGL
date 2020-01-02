@@ -45,10 +45,7 @@ class ModalArticle extends Component {
       .then(res => console.log(res.data));
   
   window.location = '/';
-  this.setState({
-   titre:'',
-   contenu:''
-  })
+  
   }
 
 

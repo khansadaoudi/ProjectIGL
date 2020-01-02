@@ -60,8 +60,6 @@ class SideBar extends Component {
         >
           <Menu.Item key="4"><Link to="CreeCompte" />Creer Compte</Menu.Item>
           <Menu.Item key="5"><Link to="ModifierCompte" />Modifier Compte</Menu.Item>
-          <Menu.Item key="6"><Link to="SupprimerCompte" />Supprimer Compte</Menu.Item>
-          <Menu.Item key="7"><Link to="AfficherCompte" />Afficher </Menu.Item>
         </SubMenu>
         <Menu.Item key="8">
                                 <Icon type="logout" />

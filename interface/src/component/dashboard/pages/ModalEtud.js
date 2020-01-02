@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MDBCol,MDBInput,MDBRow,MDBContainer, MDBBtn } from 'mdbreact';
-import axios from "axios";
+import axios from 'axios';
 import "react-datepicker/dist/react-datepicker.css";
 class ModalEtud extends Component {
   constructor(props) {
@@ -23,37 +23,44 @@ class ModalEtud extends Component {
     }
   }
   onChangeEmail(e) {
+    e.persist();
     this.setState({
     email: e.target.value
     });
   }
   onChangePassword(e) {
+    e.persist();
     this.setState({
       password: e.target.value
     });
   }
   onChangeNom(e) {
+    e.persist();
     this.setState({
     nom: e.target.value
     });
   }
   onChangePrenom(e) {
+    e.persist();
     this.setState({
       prenom:e.target.value
     });
   }
   onChangeAge(e) {
+    e.persist();
     this.setState({
       age:e.target.value
     });
   }
   onChangeDate(date) {
+   
     this.setState({
       date:date
     });
   }
   onSubmit(e) {
     e.preventDefault();
+    
     const Etudiant = {
      email: this.state.email,
       password: this.state.password,
@@ -65,18 +72,21 @@ class ModalEtud extends Component {
     
     console.log(Etudiant);
 
-    axios.post('http://localhost:5000/etudiants/add', Etudiant)
-      .then(res => console.log(res.data));
+ 
+    
+    axios ({
+      method:'POST',
+      url :'http://localhost:5000/etudiants/add',
+      data:Etudiant,
+      withCredentials: true,
+    })
+    
+    
+    .then(res => console.log(res.data))
+      .catch(console.error) ;
+      window.location = '/';
   
-  window.location = '/';
   }
-
-
-
-
-
-
-
 render(props) {
   return (
     <MDBContainer> 
